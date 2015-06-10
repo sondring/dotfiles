@@ -48,15 +48,6 @@ grb_git_prompt() {
 PS1="\[\033[33m\]\u@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 #PS1="\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(grb_git_prompt) $ "
 
-source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=~/envs
-activate_virtualenv() {
-    if [ -f env/bin/activate ]; then . env/bin/activate;
-    elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
-    elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
-    elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
-    fi
-}
 
 python_module_dir () {
     echo "$(python -c "import os.path as _, ${1}; \
